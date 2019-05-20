@@ -68,13 +68,13 @@ describe('The function `max`', function () {
 		it('[true, false]', function () {
 			array = [true, false];
 			result = max(array);
-			expect(result).toBe(undefined);
+			expect(result).toBeUndefined();
 		});
 
 		it('[undefined, "test", " ", null, {}, []]', function () {
 			array = [undefined, 'test', ' ', null, {}, []];
 			result = max(array);
-			expect(result).toBe(undefined);
+			expect(result).toBeUndefined();
 		});
 	});
 
