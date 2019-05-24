@@ -1,8 +1,14 @@
 export function min (array) {
 	if (typeof array !== 'undefined') {
-		let minimumnNumer = array[0];
+		let minimumnNumer;
 		let element;
 
+		for (element of array) {
+			if (typeof element === 'number') {
+				minimumnNumer = element;
+				break;
+			}
+		}
 		for (element of array) {
 			if (typeof element === 'number' && minimumnNumer > element) {
 				minimumnNumer = element;
@@ -14,17 +20,25 @@ export function min (array) {
 
 export function max (array) {
 	if (typeof array !== 'undefined') {
-		let minimumnNumer = array[0];
+		let maximumNumer;
 		let element;
 
 		for (element of array) {
-			if (typeof element === 'number' && minimumnNumer < element) {
-				minimumnNumer = element;
+			if (typeof element === 'number') {
+				maximumNumer = element;
+				break;
 			}
 		}
-		return minimumnNumer;
+
+		for (element of array) {
+			if (typeof element === 'number' && maximumNumer < element) {
+				maximumNumer = element;
+			}
+		}
+		return maximumNumer;
 	}
-	return undefined;
+
+	// return undefined;
 }
 
 function returnNumber (intChecker) {
