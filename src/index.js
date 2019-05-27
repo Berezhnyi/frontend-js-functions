@@ -1,15 +1,20 @@
+function returnInt (array) {
+	let element;
+
+	for (element of array) {
+		if (typeof element === 'number') {
+			return element;
+		}
+	}
+}
+
 export function min (array) {
 	if (typeof array !== 'undefined') {
-		let minimumnNumer;
+		let minimumnNumer = returnInt(array);
 		let element;
 
 		for (element of array) {
-			if (typeof element === 'number') {
-				minimumnNumer = element;
-				break;
-			}
-		}
-		for (element of array) {
+
 			if (typeof element === 'number' && minimumnNumer > element) {
 				minimumnNumer = element;
 			}
@@ -20,15 +25,8 @@ export function min (array) {
 
 export function max (array) {
 	if (typeof array !== 'undefined') {
-		let maximumNumer;
+		let maximumNumer = returnInt(array);
 		let element;
-
-		for (element of array) {
-			if (typeof element === 'number') {
-				maximumNumer = element;
-				break;
-			}
-		}
 
 		for (element of array) {
 			if (typeof element === 'number' && maximumNumer < element) {
